@@ -1,3 +1,4 @@
+/* eslint-disable prettier/prettier */
 /* eslint-disable no-trailing-spaces */
 /* eslint-disable prettier/prettier */
 /**
@@ -10,7 +11,20 @@
 
  import React, {useState} from 'react';
  import {View, StyleSheet, Text, FlatList, TouchableOpacity, Image} from 'react-native';
+ import Sound from 'react-native-sound';  
+ import {semibreve} from './sounds/semibreve.js'
+ import {minim} from './sounds/minim.js'; 
+ import {crotchet} from './sounds/crotchet.js'; 
+ import {quaver} from './sounds/quaver.js';
+ import {semiquaver} from './sounds/semiquaver.js'
+ import {dotted_semibreve} from './sounds/dotted_semibreve.js'
+ import {dotted_minim} from './sounds/dotted_minim.js'; 
+ import {dotted_crotchet} from './sounds/dotted_crotchet.js'; 
+ import {dotted_quaver} from './sounds/dotted_quaver.js';
+ import {dotted_semiquaver} from './sounds/dotted_semiquaver.js'
 
+
+ Sound.setCategory('Playback');
 
  
 
@@ -80,7 +94,7 @@ const App = () => {
         <View style = {styles.spacer}/>
 
         <TouchableOpacity style = {styles.button}>
-        <Image style={styles.rest} source={require('./assets/rest.png')}/>
+        <Image style={styles.rest} source={require('./assets/crotchet_rest.png')}/>
         </TouchableOpacity>
 
         <TouchableOpacity style = {styles.button}>
