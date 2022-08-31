@@ -92,7 +92,7 @@ var cva = new Sound('dotted_quaver_cva.mp3', Sound.MAIN_BUNDLE, error => {
     }
 });
 
-export const dotted_quaver = [
+export const dotted_semiquaver = [
   {note: 'C', icon: '../assets/dotted_semiquaver.png', sound: c, rest: '../assets/dotted_semiquaver_rest.png'}, 
   {note: 'C#/Db', icon: '../assets/dotted_semiquaver.png', sound: csharp, rest: '../assets/dotted_semiquaver_rest.png'},
   {note: 'D', icon: '../assets/dotted_semiquaver.png', sound: d, rest: '../assets/dotted_semiquaver_rest.png'}, 

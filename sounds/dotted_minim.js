@@ -94,6 +94,7 @@ var cva = new Sound('dotted_minim_cva.mp3', Sound.MAIN_BUNDLE, error => {
 
 export const dotted_minim = [
   {note: 'C', icon: '../assets/dotted_minim.png', sound: c, rest: '../assets/dotted_minim_rest.png'}, 
+  {note: 'C#/Db', icon: '../assets/dotted_minim.png', sound: csharp, rest: '../assets/dotted_minim_rest.png'}, 
   {note: 'D', icon: '../assets/dotted_minim.png', sound: d, rest: '../assets/dotted_minim_rest.png'}, 
   {note: 'D#/Eb', icon: '../assets/dotted_minim.png', sound: dsharp, rest: '../assets/dotted_minim_rest.png'}, 
   {note: 'E', icon: '../assets/dotted_minim.png', sound: e, rest: '../assets/dotted_minim_rest.png'}, 

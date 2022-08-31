@@ -9,7 +9,7 @@
  * @flow strict-local
  */
 
- import React, {useState} from 'react';
+ import React, {useRef, useState} from 'react';
  import {View, StyleSheet, Text, FlatList, TouchableOpacity, Image} from 'react-native';
  import Sound from 'react-native-sound';  
  import {semibreve} from './sounds/semibreve.js'
@@ -30,74 +30,127 @@
 
  
 const App = () => {
+
+  const [restFlag, setRest] = useState(false)
+  const [dottedFlag, setDotted] = useState(false)
+  const [currentNotes, setCurrent] = useState(crotchet)
+
   const whiteKeys = [
-    {note: 'C'},
-    {note: 'D'},
-    {note: 'E'},
-    {note: 'F'},
-    {note: 'G'},
-    {note: 'A'},
-    {note: 'B'},
-    {note: 'C'},
+    currentNotes[0],
+    currentNotes[2],
+    currentNotes[4],
+    currentNotes[5],
+    currentNotes[7],
+    currentNotes[9],
+    currentNotes[11],
+    currentNotes[12],
   ]
 
   const blackKeys = [
-    {note: 'Db\nC#', position: 30},
-    {note: 'Eb\nD#', position: 42},
-    {note: 'Gb\nF#', position: 100},    
-    {note: 'Ab\nG#', position: 114},
-    {note: 'Bb\nA#', position: 124},
+    currentNotes[1],
+    currentNotes[3],
+    currentNotes[6],
+    currentNotes[8],
+    currentNotes[10],
   ]
 
 
 
-  const WhiteKey = ({note, sound}) => {
+const WhiteKey = ({note}) => {
   return(
     <TouchableOpacity style = {styles.whiteKey}/>
 
   )
 }
 
-  const BlackKey = ({note, sound, position}) => {
+const BlackKey = ({note, position}) => {
     return(
       <TouchableOpacity style = {[styles.blackKey, {transform: [{translateY: 150}, {translateX: position}]}]}/>
     )
-  }
+}
 
    return (
      <View style={styles.container}>
 
 
-
       <View style = {styles.buttonContainer}>
 
-        <TouchableOpacity style = {styles.button}>
+        <TouchableOpacity style = {[styles.button, {backgroundColor: currentNotes == semiquaver || currentNotes == dotted_semiquaver? 'teal' : 'transparent'}]} onPress = {()=> 
+        {
+          if(dottedFlag){
+            setCurrent(dotted_semiquaver)
+          }
+          else{
+           setCurrent(semiquaver)
+          }
+        }
+        }>
         <Image style={styles.icon} source={require('./assets/semiquaver.png')}/>
         </TouchableOpacity>
 
-        <TouchableOpacity style = {styles.button}>
+
+        <TouchableOpacity style = {[styles.button, {backgroundColor: currentNotes == quaver || currentNotes == dotted_quaver? 'teal' : 'transparent'}]} onPress = {()=> 
+        {
+          if(dottedFlag){
+            setCurrent(dotted_quaver)
+          }
+          else{
+            setCurrent(quaver)
+          }
+        }
+        }>
         <Image style={styles.icon} source={require('./assets/quaver.png')}/>
         </TouchableOpacity>
 
-        <TouchableOpacity style = {styles.button}>
+
+        <TouchableOpacity style = {[styles.button, {backgroundColor: currentNotes == crotchet || currentNotes == dotted_crotchet? 'teal' : 'transparent'}]} onPress = {()=> 
+        {
+          if(dottedFlag){
+            setCurrent(dotted_crotchet)
+          }
+          else{
+            setCurrent(crotchet)
+          }
+        }
+        }>
         <Image style={styles.icon} source={require('./assets/crotchet.png')}/>
         </TouchableOpacity>
 
-        <TouchableOpacity style = {styles.button}>
+        
+        <TouchableOpacity style = {[styles.button, {backgroundColor: currentNotes == minim || currentNotes == dotted_minim? 'teal' : 'transparent'}]} onPress = {()=> 
+        {
+          if(dottedFlag){
+            setCurrent(dotted_minim)
+          }
+          else{
+            setCurrent(minim)
+          }
+        }
+        }>
         <Image style={styles.icon} source={require('./assets/minim.png')}/>
         </TouchableOpacity>
 
-        <TouchableOpacity style = {styles.button}>
+
+        <TouchableOpacity style = {[styles.button, {backgroundColor: currentNotes == semibreve || currentNotes == dotted_semibreve? 'teal' : 'transparent'}]} onPress = {()=> 
+        {
+          if(dottedFlag){
+            setCurrent(dotted_semibreve)
+          }
+          else{
+            setCurrent(semibreve)
+          }
+        }
+        }>
         <Image style={styles.icon} source={require('./assets/semibreve.png')}/>
         </TouchableOpacity> 
 
         <View style = {styles.spacer}/>
 
-        <TouchableOpacity style = {styles.button}>
+        <TouchableOpacity style = {[styles.button, {backgroundColor: restFlag ? 'teal' : 'transparent'}]} onPress = {()=> {setRest(!restFlag)}}>
         <Image style={styles.rest} source={require('./assets/crotchet_rest.png')}/>
         </TouchableOpacity>
 
-        <TouchableOpacity style = {styles.button}>
+        <TouchableOpacity style = {[styles.button, {backgroundColor: dottedFlag ? 'teal' : 'transparent'}]} onPress = {()=> {setDotted(!dottedFlag)}}>
           <Text style = {styles.dot}>.</Text>
         </TouchableOpacity>      
       
@@ -111,7 +164,7 @@ const App = () => {
           <BlackKey note = {blackKeys[1].note} position = {42}/>
           <BlackKey note = {blackKeys[2].note} position = {102}/>
           <BlackKey note = {blackKeys[3].note} position = {114}/>
-          <BlackKey note = {blackKeys[4].note} position = {124}/>
+          <BlackKey note = {blackKeys[4].note} position = {125}/>
         </View> 
 
 
