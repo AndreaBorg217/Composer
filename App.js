@@ -93,11 +93,11 @@ const App = () => {
       <View style = {styles.keyboard}>
 
         <View style = {styles.blackkeys}>
-          <BlackKey note = {blackKeys[0].note} sound = {blackKeys[0].sound} position = {30}/>
-          <BlackKey note = {blackKeys[1].note} sound = {blackKeys[1].sound} position = {42}/>
-          <BlackKey note = {blackKeys[2].note} sound = {blackKeys[2].sound} position = {102}/>
-          <BlackKey note = {blackKeys[3].note} sound = {blackKeys[3].sound} position = {114}/>
-          <BlackKey note = {blackKeys[4].note} sound = {blackKeys[4].sound} position = {124}/>
+          <BlackKey note = {blackKeys[0].note} position = {30}/>
+          <BlackKey note = {blackKeys[1].note} position = {42}/>
+          <BlackKey note = {blackKeys[2].note} position = {102}/>
+          <BlackKey note = {blackKeys[3].note} position = {114}/>
+          <BlackKey note = {blackKeys[4].note} position = {124}/>
         </View> 
 
 
