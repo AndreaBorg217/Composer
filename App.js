@@ -34,6 +34,8 @@ const App = () => {
   const [restFlag, setRest] = useState(false)
   const [dottedFlag, setDotted] = useState(false)
   const [currentNotes, setCurrent] = useState(crotchet)
+  const [melody, setMelody] = useState([])
+
 
   const whiteKeys = [
     currentNotes[0],
@@ -44,30 +46,40 @@ const App = () => {
     currentNotes[9],
     currentNotes[11],
     currentNotes[12],
-  ]
+]
 
-  const blackKeys = [
-    currentNotes[1],
-    currentNotes[3],
-    currentNotes[6],
-    currentNotes[8],
-    currentNotes[10],
-  ]
-
-
+const Note = ({note, icon})=>{
+  return(
+  <View style = {styles.card}>
+    <Image style = {styles.value} source={icon}/>
+    <Text style = {styles.note}>{note}</Text>
+  </View>
+  )
+}
 
 const WhiteKey = ({note}) => {
   return(
-    <TouchableOpacity style = {styles.whiteKey}/>
-
+    <TouchableOpacity style = {styles.whiteKey} onPress = {() => pianoPress(note)}/>
   )
 }
 
 const BlackKey = ({note, position}) => {
     return(
-      <TouchableOpacity style = {[styles.blackKey, {transform: [{translateY: 150}, {translateX: position}]}]}/>
+      <TouchableOpacity style = {[styles.blackKey, {transform: [{translateY: 150}, {translateX: position}]}]} onPress = {() => pianoPress(note)}/>
     )
 }
+
+const pianoPress = (note) =>{
+  let temp = [...melody]
+  if(restFlag){
+    temp.push({note: '-', icon: note.rest, sound: note.sound.setVolume(0)})
+  }
+  else{
+    temp.push({note: note.note, icon: note.icon, sound: note.sound})
+  }
+  setMelody(prev => [...temp])
+}
+
 
    return (
      <View style={styles.container}>
@@ -156,25 +168,34 @@ const BlackKey = ({note, position}) => {
       
       </View>
 
+      <View style = {styles.melody}>
+      <FlatList
+        data={melody}
+        renderItem={({item}) => <Note note = {item.note} icon = {(item.icon)}/>}
+        keyExtractor={(item, index) => index}
+        numColumns = {5}
+      />
+      </View>
+
 
       <View style = {styles.keyboard}>
 
         <View style = {styles.blackkeys}>
-          <BlackKey note = {blackKeys[0].note} position = {30}/>
-          <BlackKey note = {blackKeys[1].note} position = {42}/>
-          <BlackKey note = {blackKeys[2].note} position = {102}/>
-          <BlackKey note = {blackKeys[3].note} position = {114}/>
-          <BlackKey note = {blackKeys[4].note} position = {125}/>
+          <BlackKey note = {currentNotes[1]} position = {30}/>
+          <BlackKey note = {currentNotes[3]} position = {42}/>
+          <BlackKey note = {currentNotes[6]} position = {102}/>
+          <BlackKey note = {currentNotes[8]} position = {114}/>
+          <BlackKey note = {currentNotes[10]} position = {125}/>
         </View> 
 
 
-          <FlatList
-            data={whiteKeys}
-            renderItem={({item}) => <WhiteKey note = {item.note} sound = {item.sound} />}
-            keyExtractor={(item, index) => index}
-            scrollEnabled={false}
-            numColumns = {8}
-          />
+        <FlatList
+          data={whiteKeys}
+          renderItem={({item}) => <WhiteKey note = {item}/>}
+          keyExtractor={(item, index) => index}
+          scrollEnabled={false}
+          numColumns = {8}
+        />
       </View>
 
 
@@ -192,7 +213,8 @@ const BlackKey = ({note, position}) => {
      justifyContent: 'center'
    },
    keyboard: {
-    transform: [{translateY: 340}]
+    transform: [{translateY: 180}],
+    position: 'absolute',
    },
    whiteKey: {
     width:48,
@@ -232,7 +254,8 @@ const BlackKey = ({note, position}) => {
    },
    buttonContainer:{
     flexDirection: 'row',
-    transform: [{translateX: 5}, {translateY: 50}]
+    position: 'absolute',
+    transform: [{translateX: 5}, {translateY: -320}]
    },
    button:{
     width: 45,
@@ -259,6 +282,31 @@ const BlackKey = ({note, position}) => {
     color: 'white',
     fontWeight: 'bold',
     fontSize: 20, 
+   },
+   melody:{
+    borderWidth: 2,
+    borderColor: 'white',
+    borderRadius: 10,
+    width: '90%',
+    height: 400,
+    transform: [{translateY: -75}],
+   },
+   card:{
+    width: 50,
+    height: 50,
+    alignItems: 'center',
+    justifyContent: 'center',
+    margin: 10,
+    marginBottom: 15,
+   },
+   note:{
+    color: 'white',
+    fontSize: 16,
+    fontWeight: 'bold',
+   },
+   value:{
+    width: 30,
+    height: 30
    }
  });
  

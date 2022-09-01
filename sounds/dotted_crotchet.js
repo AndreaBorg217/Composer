@@ -93,17 +93,17 @@ var cva = new Sound('dotted_crotchet_cva.mp3', Sound.MAIN_BUNDLE, error => {
 });
 
 export const dotted_crotchet = [
-  {note: 'C', icon: '../assets/dotted_crotchet.png', sound: c, rest: '../assets/dotted_crotchet_rest.png'}, 
-  {note: 'C#/Db', icon: '../assets/dotted_crotchet.png', sound: csharp, rest: '../assets/dotted_crotchet_rest.png'},
-  {note: 'D', icon: '../assets/dotted_crotchet.png', sound: d, rest: '../assets/dotted_crotchet_rest.png'}, 
-  {note: 'D#/Eb', icon: '../assets/dotted_crotchet.png', sound: dsharp, rest: '../assets/dotted_crotchet_rest.png'}, 
-  {note: 'E', icon: '../assets/dotted_crotchet.png', sound: e, rest: '../assets/dotted_crotchet_rest.png'}, 
-  {note: 'F', icon: '../assets/dotted_crotchet.png', sound: f, rest: '../assets/dotted_crotchet_rest.png'}, 
-  {note: 'F#/Gb', icon: '../assets/dotted_crotchet.png', sound: fsharp, rest: '../assets/dotted_crotchet_rest.png'}, 
-  {note: 'G', icon: '../assets/dotted_crotchet.png', sound: g, rest: '../assets/dotted_crotchet_rest.png'}, 
-  {note: 'G#/Ab', icon: '../assets/dotted_crotchet.png', sound: gsharp, rest: '../assets/dotted_crotchet_rest.png'}, 
-  {note: 'A', icon: '../assets/dotted_crotchet.png', sound: a, rest: '../assets/dotted_crotchet_rest.png'}, 
-  {note: 'A#/Bb', icon: '../assets/dotted_crotchet.png', sound: asharp, rest: '../assets/dotted_crotchet_rest.png'}, 
-  {note: 'B', icon: '../assets/dotted_crotchet.png', sound: b, rest: '../assets/dotted_crotchet_rest.png'}, 
-  {note: 'C', icon: '../assets/dotted_crotchet.png', sound: cva, rest: '../assets/dotted_crotchet_rest.png'}
+  {note: 'C', icon: require('../assets/dotted_crotchet.png'), sound: c, rest: require('../assets/dotted_crotchet_rest.png')}, 
+  {note: 'C#/Db', icon: require('../assets/dotted_crotchet.png'), sound: csharp, rest: require('../assets/dotted_crotchet_rest.png')},
+  {note: 'D', icon: require('../assets/dotted_crotchet.png'), sound: d, rest: require('../assets/dotted_crotchet_rest.png')}, 
+  {note: 'D#/Eb', icon: require('../assets/dotted_crotchet.png'), sound: dsharp, rest: require('../assets/dotted_crotchet_rest.png')}, 
+  {note: 'E', icon: require('../assets/dotted_crotchet.png'), sound: e, rest: require('../assets/dotted_crotchet_rest.png')}, 
+  {note: 'F', icon: require('../assets/dotted_crotchet.png'), sound: f, rest: require('../assets/dotted_crotchet_rest.png')}, 
+  {note: 'F#/Gb', icon: require('../assets/dotted_crotchet.png'), sound: fsharp, rest: require('../assets/dotted_crotchet_rest.png')}, 
+  {note: 'G', icon: require('../assets/dotted_crotchet.png'), sound: g, rest: require('../assets/dotted_crotchet_rest.png')}, 
+  {note: 'G#/Ab', icon: require('../assets/dotted_crotchet.png'), sound: gsharp, rest: require('../assets/dotted_crotchet_rest.png')}, 
+  {note: 'A', icon: require('../assets/dotted_crotchet.png'), sound: a, rest: require('../assets/dotted_crotchet_rest.png')}, 
+  {note: 'A#/Bb', icon: require('../assets/dotted_crotchet.png'), sound: asharp, rest: require('../assets/dotted_crotchet_rest.png')}, 
+  {note: 'B', icon: require('../assets/dotted_crotchet.png'), sound: b, rest: require('../assets/dotted_crotchet_rest.png')}, 
+  {note: 'C', icon: require('../assets/dotted_crotchet.png'), sound: cva, rest: require('../assets/dotted_crotchet_rest.png')}
 ];

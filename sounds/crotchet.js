@@ -93,17 +93,17 @@ var cva = new Sound('crotchet_cva.mp3', Sound.MAIN_BUNDLE, error => {
 });
 
 export const crotchet = [
-  {note: 'C', icon: '../assets/crotchet.png', sound: c, rest: '../assets/crotchet_rest.png'}, 
-  {note: 'C#/Db', icon: '../assets/crotchet.png', sound: csharp, rest: '../assets/crotchet_rest.png'},
-  {note: 'D', icon: '../assets/crotchet.png', sound: d, rest: '../assets/crotchet_rest.png'}, 
-  {note: 'D#/Eb', icon: '../assets/crotchet.png', sound: dsharp, rest: '../assets/crotchet_rest.png'}, 
-  {note: 'E', icon: '../assets/crotchet.png', sound: e, rest: '../assets/crotchet_rest.png'}, 
-  {note: 'F', icon: '../assets/crotchet.png', sound: f, rest: '../assets/crotchet_rest.png'}, 
-  {note: 'F#/Gb', icon: '../assets/crotchet.png', sound: fsharp, rest: '../assets/crotchet_rest.png'}, 
-  {note: 'G', icon: '../assets/crotchet.png', sound: g, rest: '../assets/crotchet_rest.png'}, 
-  {note: 'G#/Ab', icon: '../assets/crotchet.png', sound: gsharp, rest: '../assets/crotchet_rest.png'}, 
-  {note: 'A', icon: '../assets/crotchet.png', sound: a, rest: '../assets/crotchet_rest.png'}, 
-  {note: 'A#/Bb', icon: '../assets/crotchet.png', sound: asharp, rest: '../assets/crotchet_rest.png'}, 
-  {note: 'B', icon: '../assets/crotchet.png', sound: b, rest: '../assets/crotchet_rest.png'}, 
-  {note: 'C', icon: '../assets/crotchet.png', sound: cva, rest: '../assets/crotchet_rest.png'}
+  {note: 'C', icon: require('../assets/crotchet.png'), sound: c, rest: require('../assets/crotchet_rest.png')}, 
+  {note: 'C#/Db', icon: require('../assets/crotchet.png'), sound: csharp, rest: require('../assets/crotchet_rest.png')},
+  {note: 'D', icon: require('../assets/crotchet.png'), sound: d, rest: require('../assets/crotchet_rest.png')}, 
+  {note: 'D#/Eb', icon: require('../assets/crotchet.png'), sound: dsharp, rest: require('../assets/crotchet_rest.png')}, 
+  {note: 'E', icon: require('../assets/crotchet.png'), sound: e, rest: require('../assets/crotchet_rest.png')}, 
+  {note: 'F', icon: require('../assets/crotchet.png'), sound: f, rest: require('../assets/crotchet_rest.png')}, 
+  {note: 'F#/Gb', icon: require('../assets/crotchet.png'), sound: fsharp, rest: require('../assets/crotchet_rest.png')}, 
+  {note: 'G', icon: require('../assets/crotchet.png'), sound: g, rest: require('../assets/crotchet_rest.png')}, 
+  {note: 'G#/Ab', icon: require('../assets/crotchet.png'), sound: gsharp, rest: require('../assets/crotchet_rest.png')}, 
+  {note: 'A', icon: require('../assets/crotchet.png'), sound: a, rest: require('../assets/crotchet_rest.png')}, 
+  {note: 'A#/Bb', icon: require('../assets/crotchet.png'), sound: asharp, rest: require('../assets/crotchet_rest.png')}, 
+  {note: 'B', icon: require('../assets/crotchet.png'), sound: b, rest: require('../assets/crotchet_rest.png')}, 
+  {note: 'C', icon: require('../assets/crotchet.png'), sound: cva, rest: require('../assets/crotchet_rest.png')}
 ];

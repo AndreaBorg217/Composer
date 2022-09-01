@@ -93,17 +93,17 @@ var cva = new Sound('quaver_cva.mp3', Sound.MAIN_BUNDLE, error => {
 });
 
 export const quaver = [
-  {note: 'C', icon: '../assets/quaver.png', sound: c, rest: '../assets/quaver_rest.png'}, 
-  {note: 'C#/Db', icon: '../assets/quaver.png', sound: csharp, rest: '../assets/quaver_rest.png'},
-  {note: 'D', icon: '../assets/quaver.png', sound: d, rest: '../assets/quaver_rest.png'}, 
-  {note: 'D#/Eb', icon: '../assets/quaver.png', sound: dsharp, rest: '../assets/quaver_rest.png'}, 
-  {note: 'E', icon: '../assets/quaver.png', sound: e, rest: '../assets/quaver_rest.png'}, 
-  {note: 'F', icon: '../assets/quaver.png', sound: f, rest: '../assets/quaver_rest.png'}, 
-  {note: 'F#/Gb', icon: '../assets/quaver.png', sound: fsharp, rest: '../assets/quaver_rest.png'}, 
-  {note: 'G', icon: '../assets/quaver.png', sound: g, rest: '../assets/quaver_rest.png'}, 
-  {note: 'G#/Ab', icon: '../assets/quaver.png', sound: gsharp, rest: '../assets/quaver_rest.png'}, 
-  {note: 'A', icon: '../assets/quaver.png', sound: a, rest: '../assets/quaver_rest.png'}, 
-  {note: 'A#/Bb', icon: '../assets/quaver.png', sound: asharp, rest: '../assets/quaver_rest.png'}, 
-  {note: 'B', icon: '../assets/quaver.png', sound: b, rest: '../assets/quaver_rest.png'}, 
-  {note: 'C', icon: '../assets/quaver.png', sound: cva, rest: '../assets/quaver_rest.png'}
+  {note: 'C', icon: require('../assets/quaver.png'), sound: c, rest: require('../assets/quaver_rest.png')}, 
+  {note: 'C#/Db', icon: require('../assets/quaver.png'), sound: csharp, rest: require('../assets/quaver_rest.png')},
+  {note: 'D', icon: require('../assets/quaver.png'), sound: d, rest: require('../assets/quaver_rest.png')}, 
+  {note: 'D#/Eb', icon: require('../assets/quaver.png'), sound: dsharp, rest: require('../assets/quaver_rest.png')}, 
+  {note: 'E', icon: require('../assets/quaver.png'), sound: e, rest: require('../assets/quaver_rest.png')}, 
+  {note: 'F', icon: require('../assets/quaver.png'), sound: f, rest: require('../assets/quaver_rest.png')}, 
+  {note: 'F#/Gb', icon: require('../assets/quaver.png'), sound: fsharp, rest: require('../assets/quaver_rest.png')}, 
+  {note: 'G', icon: require('../assets/quaver.png'), sound: g, rest: require('../assets/quaver_rest.png')}, 
+  {note: 'G#/Ab', icon: require('../assets/quaver.png'), sound: gsharp, rest: require('../assets/quaver_rest.png')}, 
+  {note: 'A', icon: require('../assets/quaver.png'), sound: a, rest: require('../assets/quaver_rest.png')}, 
+  {note: 'A#/Bb', icon: require('../assets/quaver.png'), sound: asharp, rest: require('../assets/quaver_rest.png')}, 
+  {note: 'B', icon: require('../assets/quaver.png'), sound: b, rest: require('../assets/quaver_rest.png')}, 
+  {note: 'C', icon: require('../assets/quaver.png'), sound: cva, rest: require('../assets/quaver_rest.png')}
 ];

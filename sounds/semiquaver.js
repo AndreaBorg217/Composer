@@ -93,17 +93,17 @@ var cva = new Sound('semiquaver_cva.mp3', Sound.MAIN_BUNDLE, error => {
 });
 
 export const semiquaver = [
-  {note: 'C', icon: '../assets/semiquaver.png', sound: c, rest: '../assets/semiquaver_rest.png'}, 
-  {note: 'C#/Db', icon: '../assets/semiquaver.png', sound: csharp, rest: '../assets/semiquaver_rest.png'},
-  {note: 'D', icon: '../assets/semiquaver.png', sound: d, rest: '../assets/semiquaver_rest.png'}, 
-  {note: 'D#/Eb', icon: '../assets/semiquaver.png', sound: dsharp, rest: '../assets/semiquaver_rest.png'}, 
-  {note: 'E', icon: '../assets/semiquaver.png', sound: e, rest: '../assets/semiquaver_rest.png'}, 
-  {note: 'F', icon: '../assets/semiquaver.png', sound: f, rest: '../assets/semiquaver_rest.png'}, 
-  {note: 'F#/Gb', icon: '../assets/semiquaver.png', sound: fsharp, rest: '../assets/semiquaver_rest.png'}, 
-  {note: 'G', icon: '../assets/semiquaver.png', sound: g, rest: '../assets/semiquaver_rest.png'}, 
-  {note: 'G#/Ab', icon: '../assets/semiquaver.png', sound: gsharp, rest: '../assets/semiquaver_rest.png'}, 
-  {note: 'A', icon: '../assets/semiquaver.png', sound: a, rest: '../assets/semiquaver_rest.png'}, 
-  {note: 'A#/Bb', icon: '../assets/semiquaver.png', sound: asharp, rest: '../assets/semiquaver_rest.png'}, 
-  {note: 'B', icon: '../assets/semiquaver.png', sound: b, rest: '../assets/semiquaver_rest.png'}, 
-  {note: 'C', icon: '../assets/semiquaver.png', sound: cva, rest: '../assets/semiquaver_rest.png'}
+  {note: 'C', icon: require('../assets/semiquaver.png'), sound: c, rest: require('../assets/semiquaver_rest.png')}, 
+  {note: 'C#/Db', icon: require('../assets/semiquaver.png'), sound: csharp, rest: require('../assets/semiquaver_rest.png')},
+  {note: 'D', icon: require('../assets/semiquaver.png'), sound: d, rest: require('../assets/semiquaver_rest.png')}, 
+  {note: 'D#/Eb', icon: require('../assets/semiquaver.png'), sound: dsharp, rest: require('../assets/semiquaver_rest.png')}, 
+  {note: 'E', icon: require('../assets/semiquaver.png'), sound: e, rest: require('../assets/semiquaver_rest.png')}, 
+  {note: 'F', icon: require('../assets/semiquaver.png'), sound: f, rest: require('../assets/semiquaver_rest.png')}, 
+  {note: 'F#/Gb', icon: require('../assets/semiquaver.png'), sound: fsharp, rest: require('../assets/semiquaver_rest.png')}, 
+  {note: 'G', icon: require('../assets/semiquaver.png'), sound: g, rest: require('../assets/semiquaver_rest.png')}, 
+  {note: 'G#/Ab', icon: require('../assets/semiquaver.png'), sound: gsharp, rest: require('../assets/semiquaver_rest.png')}, 
+  {note: 'A', icon: require('../assets/semiquaver.png'), sound: a, rest: require('../assets/semiquaver_rest.png')}, 
+  {note: 'A#/Bb', icon: require('../assets/semiquaver.png'), sound: asharp, rest: require('../assets/semiquaver_rest.png')}, 
+  {note: 'B', icon: require('../assets/semiquaver.png'), sound: b, rest: require('../assets/semiquaver_rest.png')}, 
+  {note: 'C', icon: require('../assets/semiquaver.png'), sound: cva, rest: require('../assets/semiquaver_rest.png')}
 ];

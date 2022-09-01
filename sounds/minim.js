@@ -93,17 +93,17 @@ var cva = new Sound('minim_cva.mp3', Sound.MAIN_BUNDLE, error => {
 });
 
 export const minim = [
-  {note: 'C', icon: '../assets/minim.png', sound: c, rest: '../assets/minim_rest.png'}, 
-  {note: 'C#/Db', icon: '../assets/minim.png', sound: csharp, rest: '../assets/minim_rest.png'},
-  {note: 'D', icon: '../assets/minim.png', sound: d, rest: '../assets/minim_rest.png'}, 
-  {note: 'D#/Eb', icon: '../assets/minim.png', sound: dsharp, rest: '../assets/minim_rest.png'}, 
-  {note: 'E', icon: '../assets/minim.png', sound: e, rest: '../assets/minim_rest.png'}, 
-  {note: 'F', icon: '../assets/minim.png', sound: f, rest: '../assets/minim_rest.png'}, 
-  {note: 'F#/Gb', icon: '../assets/minim.png', sound: fsharp, rest: '../assets/minim_rest.png'}, 
-  {note: 'G', icon: '../assets/minim.png', sound: g, rest: '../assets/minim_rest.png'}, 
-  {note: 'G#/Ab', icon: '../assets/minim.png', sound: gsharp, rest: '../assets/minim_rest.png'}, 
-  {note: 'A', icon: '../assets/minim.png', sound: a, rest: '../assets/minim_rest.png'}, 
-  {note: 'A#/Bb', icon: '../assets/minim.png', sound: asharp, rest: '../assets/minim_rest.png'}, 
-  {note: 'B', icon: '../assets/minim.png', sound: b, rest: '../assets/minim_rest.png'}, 
-  {note: 'C', icon: '../assets/minim.png', sound: cva, rest: '../assets/minim_rest.png'}
-];
+  {note: 'C', icon: require('../assets/minim.png'), sound: c, rest: require('../assets/minim_rest.png')}, 
+  {note: 'C#/Db', icon: require('../assets/minim.png'), sound: csharp, rest: require('../assets/minim_rest.png')},
+  {note: 'D', icon: require('../assets/minim.png'), sound: d, rest: require('../assets/minim_rest.png')}, 
+  {note: 'D#/Eb', icon: require('../assets/minim.png'), sound: dsharp, rest: require('../assets/minim_rest.png')}, 
+  {note: 'E', icon: require('../assets/minim.png'), sound: e, rest: require('../assets/minim_rest.png')}, 
+  {note: 'F', icon: require('../assets/minim.png'), sound: f, rest: require('../assets/minim_rest.png')}, 
+  {note: 'F#/Gb', icon: require('../assets/minim.png'), sound: fsharp, rest: require('../assets/minim_rest.png')}, 
+  {note: 'G', icon: require('../assets/minim.png'), sound: g, rest: require('../assets/minim_rest.png')}, 
+  {note: 'G#/Ab', icon: require('../assets/minim.png'), sound: gsharp, rest: require('../assets/minim_rest.png')}, 
+  {note: 'A', icon: require('../assets/minim.png'), sound: a, rest: require('../assets/minim_rest.png')}, 
+  {note: 'A#/Bb', icon: require('../assets/minim.png'), sound: asharp, rest: require('../assets/minim_rest.png')}, 
+  {note: 'B', icon: require('../assets/minim.png'), sound: b, rest: require('../assets/minim_rest.png')}, 
+  {note: 'C', icon: require('../assets/minim.png'), sound: cva, rest: require('../assets/minim_rest.png')}
+]

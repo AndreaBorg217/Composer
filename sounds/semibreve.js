@@ -93,17 +93,17 @@ var cva = new Sound('semibreve_cva.mp3', Sound.MAIN_BUNDLE, error => {
 });
 
 export const semibreve = [
-  {note: 'C', icon: '../assets/semibreve.png', sound: c, rest: '../assets/semibreve_rest.png'}, 
-  {note: 'C#/Db', icon: '../assets/semibreve.png', sound: csharp, rest: '../assets/semibreve_rest.png'},
-  {note: 'D', icon: '../assets/semibreve.png', sound: d, rest: '../assets/semibreve_rest.png'}, 
-  {note: 'D#/Eb', icon: '../assets/semibreve.png', sound: dsharp, rest: '../assets/semibreve_rest.png'}, 
-  {note: 'E', icon: '../assets/semibreve.png', sound: e, rest: '../assets/semibreve_rest.png'}, 
-  {note: 'F', icon: '../assets/semibreve.png', sound: f, rest: '../assets/semibreve_rest.png'}, 
-  {note: 'F#/Gb', icon: '../assets/semibreve.png', sound: fsharp, rest: '../assets/semibreve_rest.png'}, 
-  {note: 'G', icon: '../assets/semibreve.png', sound: g, rest: '../assets/semibreve_rest.png'}, 
-  {note: 'G#/Ab', icon: '../assets/semibreve.png', sound: gsharp, rest: '../assets/semibreve_rest.png'}, 
-  {note: 'A', icon: '../assets/semibreve.png', sound: a, rest: '../assets/semibreve_rest.png'}, 
-  {note: 'A#/Bb', icon: '../assets/semibreve.png', sound: asharp, rest: '../assets/semibreve_rest.png'}, 
-  {note: 'B', icon: '../assets/semibreve.png', sound: b, rest: '../assets/semibreve_rest.png'}, 
-  {note: 'C', icon: '../assets/semibreve.png', sound: cva, rest: '../assets/semibreve_rest.png'}
+  {note: 'C', icon: require('../assets/semibreve.png'), sound: c, rest: require('../assets/semibreve_rest.png')}, 
+  {note: 'C#/Db', icon: require('../assets/semibreve.png'), sound: csharp, rest: require('../assets/semibreve_rest.png')},
+  {note: 'D', icon: require('../assets/semibreve.png'), sound: d, rest: require('../assets/semibreve_rest.png')}, 
+  {note: 'D#/Eb', icon: require('../assets/semibreve.png'), sound: dsharp, rest: require('../assets/semibreve_rest.png')}, 
+  {note: 'E', icon: require('../assets/semibreve.png'), sound: e, rest: require('../assets/semibreve_rest.png')}, 
+  {note: 'F', icon: require('../assets/semibreve.png'), sound: f, rest: require('../assets/semibreve_rest.png')}, 
+  {note: 'F#/Gb', icon: require('../assets/semibreve.png'), sound: fsharp, rest: require('../assets/semibreve_rest.png')}, 
+  {note: 'G', icon: require('../assets/semibreve.png'), sound: g, rest: require('../assets/semibreve_rest.png')}, 
+  {note: 'G#/Ab', icon: require('../assets/semibreve.png'), sound: gsharp, rest: require('../assets/semibreve_rest.png')}, 
+  {note: 'A', icon: require('../assets/semibreve.png'), sound: a, rest: require('../assets/semibreve_rest.png')}, 
+  {note: 'A#/Bb', icon: require('../assets/semibreve.png'), sound: asharp, rest: require('../assets/semibreve_rest.png')}, 
+  {note: 'B', icon: require('../assets/semibreve.png'), sound: b, rest: require('../assets/semibreve_rest.png')}, 
+  {note: 'C', icon: require('../assets/semibreve.png'), sound: cva, rest: require('../assets/semibreve_rest.png')}
 ];
