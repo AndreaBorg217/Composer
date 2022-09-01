@@ -48,6 +48,37 @@ const App = () => {
     currentNotes[12],
 ]
 
+const pianoPress = (note) =>{
+  let temp = [...melody]
+  let tempObj = {...note}
+  if(restFlag){
+    temp.push({note: '-', icon: note.rest, sound: tempObj.sound.setVolume(0)})
+  }
+  else{
+    temp.push({note: note.note, icon: note.icon, sound: tempObj.sound.setVolume(1)})
+  }
+  setMelody(prev => [...temp])
+}
+
+let index = 0;
+
+  const playMelody = () => {
+    if(index != melody.length){
+    const currentToBePLayed = melody[index].sound;
+      if(currentToBePLayed){
+        currentToBePLayed.play(success => onplaybackComplete())
+      }
+      else{
+        index = 0;
+      }
+  }
+  }
+
+  const onplaybackComplete  = () => {
+    index++
+    playMelody()
+  }
+
 const Note = ({note, icon})=>{
   return(
   <View style = {styles.card}>
@@ -69,16 +100,7 @@ const BlackKey = ({note, position}) => {
     )
 }
 
-const pianoPress = (note) =>{
-  let temp = [...melody]
-  if(restFlag){
-    temp.push({note: '-', icon: note.rest, sound: note.sound.setVolume(0)})
-  }
-  else{
-    temp.push({note: note.note, icon: note.icon, sound: note.sound})
-  }
-  setMelody(prev => [...temp])
-}
+
 
 
    return (
@@ -159,13 +181,30 @@ const pianoPress = (note) =>{
         <View style = {styles.spacer}/>
 
         <TouchableOpacity style = {[styles.button, {backgroundColor: restFlag ? 'teal' : 'transparent'}]} onPress = {()=> {setRest(!restFlag)}}>
-        <Image style={styles.rest} source={require('./assets/crotchet_rest.png')}/>
+        <Image style={styles.icon} source={require('./assets/crotchet_rest.png')}/>
         </TouchableOpacity>
 
         <TouchableOpacity style = {[styles.button, {backgroundColor: dottedFlag ? 'teal' : 'transparent'}]} onPress = {()=> {setDotted(!dottedFlag)}}>
           <Text style = {styles.dot}>.</Text>
         </TouchableOpacity>      
       
+      </View>
+
+      <View style = {styles.playbackspace}>
+        <TouchableOpacity onPress = {()=> playMelody()}>
+          <Image style={styles.play} source={require('./assets/play.png')}/>
+        </TouchableOpacity>
+
+        <View style = {styles.spacer}/>
+
+        <TouchableOpacity onPress = {()=> 
+        {
+          let temp = [...melody]
+          temp.pop()
+          setMelody(prev => [...temp])
+        }}>
+          <Image style={styles.play} source={require('./assets/backspace.png')}/>
+        </TouchableOpacity>
       </View>
 
       <View style = {styles.melody}>
@@ -274,9 +313,9 @@ const pianoPress = (note) =>{
     width: 25,
     height: 25
    },
-   rest:{
-    width: 35,
-    height: 35
+   play:{
+    width: 25,
+    height: 25
    },
    dot:{
     color: 'white',
@@ -288,8 +327,9 @@ const pianoPress = (note) =>{
     borderColor: 'white',
     borderRadius: 10,
     width: '90%',
-    height: 400,
-    transform: [{translateY: -75}],
+    height: 330,
+    paddingTop: 40,
+    transform: [{translateY: -90}],
    },
    card:{
     width: 50,
@@ -307,7 +347,18 @@ const pianoPress = (note) =>{
    value:{
     width: 30,
     height: 30
-   }
+   },
+   playbackspace:{
+    flexDirection: 'row',
+    position: 'absolute',
+    transform: [{translateY: -250}],
+    backgroundColor: '#123',
+    zIndex: 100,
+    borderColor: 'white',
+    borderWidth: 2,
+    borderRadius: 10,
+    padding: 15
+   },
  });
  
  export default App;
