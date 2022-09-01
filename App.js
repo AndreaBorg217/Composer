@@ -10,7 +10,7 @@
  */
 
  import React, {useRef, useState} from 'react';
- import {View, StyleSheet, Text, FlatList, TouchableOpacity, Image} from 'react-native';
+ import {View, StyleSheet, Text, FlatList, TouchableOpacity, Image, Switch} from 'react-native';
  import Sound from 'react-native-sound';  
  import {semibreve} from './sounds/semibreve.js'
  import {minim} from './sounds/minim.js'; 
@@ -35,6 +35,7 @@ const App = () => {
   const [dottedFlag, setDotted] = useState(false)
   const [currentNotes, setCurrent] = useState(crotchet)
   const [melody, setMelody] = useState([])
+  const [showNotes, setShowNotes] = useState(true)
 
 
   const whiteKeys = [
@@ -90,13 +91,17 @@ const Note = ({note, icon})=>{
 
 const WhiteKey = ({note}) => {
   return(
-    <TouchableOpacity style = {styles.whiteKey} onPress = {() => pianoPress(note)}/>
+    <TouchableOpacity style = {styles.whiteKey} onPress = {() => pianoPress(note)}>
+        <Text style = {[styles.whiteKeyText, {color: showNotes ? "black" : "white"}]}>{note.note}</Text>
+    </TouchableOpacity>
   )
 }
 
 const BlackKey = ({note, position}) => {
     return(
-      <TouchableOpacity style = {[styles.blackKey, {transform: [{translateY: 150}, {translateX: position}]}]} onPress = {() => pianoPress(note)}/>
+      <TouchableOpacity style = {[styles.blackKey, {transform: [{translateY: 150}, {translateX: position}]}]} onPress = {() => pianoPress(note)}>
+        <Text style = {[styles.blackKeyText, {color: showNotes ? "white" : "black"}]}>{note.note.replace('/', ' ')}</Text>
+      </TouchableOpacity>
     )
 }
 
@@ -216,6 +221,14 @@ const BlackKey = ({note, position}) => {
       />
       </View>
 
+      <Switch
+        style = {styles.switch}
+        trackColor={{ false: "teal", true: "white" }}
+        thumbColor={showNotes ? "teal" : "white"}
+        onValueChange={() => setShowNotes(!showNotes)}
+        value={showNotes}
+      />
+
 
       <View style = {styles.keyboard}>
 
@@ -235,7 +248,8 @@ const BlackKey = ({note, position}) => {
           scrollEnabled={false}
           numColumns = {8}
         />
-      </View>
+
+    </View>
 
 
      </View>
@@ -276,19 +290,18 @@ const BlackKey = ({note, position}) => {
     zIndex: 1,
     alignItems: 'center',
     justifyContent: 'flex-end',
-    padding: 15,
+    paddingBottom: 15,
    },
    blackkeys:{
     flexDirection: 'row'
    },
    whiteKeyText:{
-    fontSize: 30,
+    fontSize: 20,
     fontWeight: 'bold',
    },
    blackKeyText:{
     color: 'white',
-    fontSize: 25,
-    padding: 5,
+    fontSize: 15,
     textAlign: 'center',
    },
    buttonContainer:{
@@ -327,9 +340,9 @@ const BlackKey = ({note, position}) => {
     borderColor: 'white',
     borderRadius: 10,
     width: '90%',
-    height: 330,
+    height: 350,
     paddingTop: 40,
-    transform: [{translateY: -90}],
+    transform: [{translateY: -80}],
    },
    card:{
     width: 50,
@@ -358,6 +371,11 @@ const BlackKey = ({note, position}) => {
     borderWidth: 2,
     borderRadius: 10,
     padding: 15
+   },
+   switch:{
+    transform: [{translateY: 130}, {translateX: -160}],
+    position: 'absolute',
+    zIndex: 1
    },
  });
  
