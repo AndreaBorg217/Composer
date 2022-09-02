@@ -38,8 +38,8 @@ const App = () => {
   const [showNotes, setShowNotes] = useState(true)
 
 
-  const whiteKeys = [
-    currentNotes[0],
+const whiteKeys = [
+  currentNotes[0],
     currentNotes[2],
     currentNotes[4],
     currentNotes[5],
